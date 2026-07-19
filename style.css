@@ -1523,10 +1523,7 @@ transform:none;
 }
 
 .envelope.open .letter{
-    transform: translate(-50%, -80px);
-    width: 650px;
-    max-width: 90vw;
-    z-index: 20;
+    transform: translate(-50%, -40px) !important;
 }
 
 .letter h1{

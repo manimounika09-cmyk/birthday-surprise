@@ -891,23 +891,13 @@ function startEnvelope(){
         ease:"back.out(1.7)"
     });
 
-    // Remove old listeners if any
-    envelope.onclick = null;
-
-    // Wait for user to tap the envelope
-    envelope.onclick = function(){
+    envelope.onclick=function(){
 
         envelope.classList.add("open");
 
-        confetti({
-            particleCount:180,
-            spread:90,
-            origin:{y:0.6}
-        });
+        document.querySelector(".letter").style.display="block";
 
-        setTimeout(()=>{
-            startLetter();
-        },800);
+        startLetter();
 
     };
 

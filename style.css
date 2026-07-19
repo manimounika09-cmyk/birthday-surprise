@@ -1490,28 +1490,33 @@ transform:none;
 
 .letter{
 
-    position:absolute;
+    position:fixed;
+
+    top:50%;
 
     left:50%;
 
-    bottom:18px;
+    transform:translate(-50%,-50%);
 
-    transform:translateX(-50%);
+    width:min(92vw,600px);
 
-    width:88%;
+    max-height:85vh;
+
+    overflow-y:auto;
 
     background:#fffdf8;
 
-    border-radius:14px;
+    border-radius:18px;
 
-    padding:30px;
+    padding:25px;
 
-    box-shadow:0 20px 45px rgba(0,0,0,.25);
+    box-shadow:0 25px 60px rgba(0,0,0,.35);
 
-    transition:1.5s;
+    z-index:100;
 
-    z-index:2;
+    display:none;
 
+}
 }
 
 /* Open animation */
@@ -1523,7 +1528,9 @@ transform:none;
 }
 
 .envelope.open .letter{
-    transform: translate(-50%, -40px) !important;
+
+    display:block;
+
 }
 
 .letter h1{

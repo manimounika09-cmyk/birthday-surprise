@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday ❤️</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@400;700&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="style.css">
+
+</head>
+
+<body>
+
+<!-- Floating Background -->
+
+<div id="particles"></div>
+
+<div id="sparkContainer"></div>
+
+<div id="transitionOverlay"></div>
+
+<!-- ===================================== -->
+
+<!-- SCREEN 1 -->
+
+<!-- Loading -->
+
+<!-- ===================================== -->
+
+<section
+id="loadingScreen"
+class="screen active">
+
+<div class="loadingBox">
+
+<div class="loaderHeart">
+
+❤
+
+</div>
+
+<h1>
+
+Just a few more seconds...
+
+</h1>
+
+<p>
+
+Something made with love is waiting...
+
+</p>
+
+<div class="loadingBar">
+
+<div class="loadingFill">
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ===================================== -->
+
+<!-- SCREEN 2 -->
+
+<!-- Password -->
+
+<!-- ===================================== -->
+
+<section
+id="passwordScreen"
+class="screen">
+
+<div class="glassCard">
+
+<h1>
+
+Our Secret ❤️
+
+</h1>
+
+<p>
+
+Enter our special date
+
+</p>
+
+<div
+id="pinDots"
+class="pinDots">
+
+<span></span>
+
+<span></span>
+
+<span></span>
+
+<span></span>
+
+<span></span>
+
+<span></span>
+
+</div>
+
+<input
+id="pwd"
+type="password"
+maxlength="6"
+readonly>
+
+<div class="keypad">
+
+<button onclick="pressKey('1')">1</button>
+
+<button onclick="pressKey('2')">2</button>
+
+<button onclick="pressKey('3')">3</button>
+
+<button onclick="pressKey('4')">4</button>
+
+<button onclick="pressKey('5')">5</button>
+
+<button onclick="pressKey('6')">6</button>
+
+<button onclick="pressKey('7')">7</button>
+
+<button onclick="pressKey('8')">8</button>
+
+<button onclick="pressKey('9')">9</button>
+
+<button onclick="clearPin()">✕</button>
+
+<button onclick="pressKey('0')">0</button>
+
+<button onclick="deletePin()">⌫</button>
+
+</div>
+
+<button
+class="unlockBtn"
+onclick="checkPassword()">
+
+Unlock ❤️
+
+</button>
+
+<p
+id="message"
+class="errorText">
+
+</p>
+
+</div>
+
+</section>
+
+<!-- ===================================== -->
+
+<!-- SCREEN 3 -->
+
+<!-- Heart -->
+
+<!-- ===================================== -->
+
+<section
+id="heartScreen"
+class="screen">
+
+<div class="heartScene">
+
+<img
+src="images/Red-Heart-PNG-Photo.png"
+class="heartImage"
+id="heartImage">
+
+</div>
+
+<h1
+class="birthdayTitle">
+
+Happy Birthday
+
+</h1>
+
+<h2
+class="birthdayName">
+
+Kanna ❤️
+
+</h2>
+
+</section>
+
+<!-- ===================================== -->
+
+<!-- SCREEN 4 -->
+
+<!-- Birthday -->
+
+<!-- ===================================== -->
+
+<section
+id="birthdayScreen"
+class="screen">
+
+<div class="birthdayCard">
+
+<div id="typewriter">
+
+</div>
+
+<div
+id="questionBox"
+class="questionBox">
+
+<h2>
+
+Are you excited
+for what's next?
+
+</h2>
+
+<div class="buttonRow">
+
+<button
+class="yesBtn"
+onclick="goToCake()">
+
+YES ❤️
+
+</button>
+
+<button
+id="noBtn"
+class="noBtn">
+
+NO 🤍
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ===================================== -->
+
+<!-- SCREEN 5 -->
+
+<!-- Cake -->
+
+<!-- ===================================== -->
+
+<section
+id="cakeScreen"
+class="screen">
+
+<div class="cake-box">
+
+    <img src="images/cake.png"
+         class="cake"
+         id="cake">
+
+</div>
+<h2 class="cake-instruction">
+
+    🎂 Click the cake to celebrate together ❤️
+
+</h2>
+
+</section>
+
+<!-- ===================================== -->
+
+<!-- SCREEN 6 -->
+
+<!-- Wish -->
+
+<!-- ===================================== -->
+
+<section
+id="wishScreen"
+class="screen">
+
+<div class="wishCard">
+
+<h1>
+
+Close Your Eyes...
+
+</h1>
+
+<p>
+
+Take a deep breath...
+
+</p>
+
+<p>
+
+Imagine us celebrating together...
+
+</p>
+
+<p>
+
+Now...
+
+Make your biggest wish ❤️
+
+</p>
+
+<button
+onclick="goToBalloons()">
+
+Continue
+
+</button>
+
+</div>
+
+</section>
+
+<!-- ===================================== -->
+
+<!-- SCREEN 7 -->
+
+<!-- Balloons -->
+
+<!-- ===================================== -->
+
+<section
+id="balloonScreen"
+class="screen">
+
+<h1>
+
+Pop Every Balloon 🎈
+
+</h1>
+
+<div class="balloon-container">
+
+<img
+src="images/balloons/black.jpg"
+class="balloon"
+onclick="popBalloon(this,1)">
+
+<img
+src="images/balloons/gold.jpg"
+class="balloon"
+onclick="popBalloon(this,2)">
+
+<img
+src="images/balloons/red.png"
+class="balloon"
+onclick="popBalloon(this,3)">
+
+<img
+src="images/balloons/blue.png"
+class="balloon"
+onclick="popBalloon(this,4)">
+
+</div>
+
+<div
+id="balloonMessage">
+
+<h2>
+
+</h2>
+
+<p>
+
+</p>
+
+</div>
+
+</section>
+
+<!-- ===================================== -->
+
+<!-- SCREEN 8 -->
+
+<!-- Envelope -->
+
+<!-- ===================================== -->
+
+<section id="surpriseScreen" class="screen">
+
+    <div class="envelope-container">
+
+        <div class="envelope" id="envelope">
+
+            <div class="envelope-back"></div>
+
+            <div class="envelope-flap" id="flap"></div>
+
+            <div class="letter" id="letter">
+
+                <h1>❤️ One Last Surprise ❤️</h1>
+
+                <div id="finalLetter"></div>
+
+                <img
+                    src="images/hero.jpeg"
+                    class="finalPhoto">
+                    <button class="nextBtn" onclick="goToFinalScreen()">
+
+                       Next ❤️
+
+                    </button>
+
+                <h3 class="signature">
+                    Forever Yours ❤️<br>
+                    Mounika
+                </h3>
+
+            </div>
+
+        </div>
+
+        <p class="tapText">
+            💌 Tap the envelope
+        </p>
+
+    </div>
+
+</section>
+<!-- ===================================== -->
+<!-- SCREEN 9 -->
+<!-- Final Birthday -->
+<!-- ===================================== -->
+
+<section id="finalScreen" class="screen">
+
+    <div class="finalCard">
+
+        <h1>🎉 HAPPY BIRTHDAY 🎉</h1>
+
+        <h2>Kanna ❤️</h2>
+
+        <p>
+
+            I hope this little surprise made you smile.
+
+            No matter how many miles separate us,
+
+            you'll always be my favorite person.
+
+            ❤️
+
+        </p>
+
+        <button onclick="restartSurprise()">
+
+            Watch Again ❤️
+
+        </button>
+
+    </div>
+
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
